@@ -26,8 +26,17 @@ let currentCard
 const getAllCards = () => {
     fetch(CARDS_URL)
     .then(resp => resp.json())
-    .then(assignUserCards)
+    .then(startGame)
     .catch(error => alert(error.message))
+}
+
+const startGame = cards => {
+    assignUserCards(cards)
+    assignCpuCards(cards)
+}
+
+const assignCpuCards = cards => {
+    
 }
 
 const assignUserCards = cards => {
@@ -66,8 +75,8 @@ const moveCard = () => {
 
 window.addEventListener('load', getAllCards)
 
-gameBoard = [
-    ['','',''],
-    ['','',''],
-    ['','','']
-]
+// gameBoard = [
+//     ['','',''],
+//     ['','',''],
+//     ['','','']
+// ]
