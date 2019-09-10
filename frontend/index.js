@@ -19,8 +19,10 @@ const playerCard4 = document.querySelector('.player-card#pc-4')
 const playerCard5 = document.querySelector('.player-card#pc-5')
 
 const playerHand = document.querySelectorAll('.player-card')
+const cpuHand = document.querySelectorAll('.cpu-card')
 
 let playerCards = []
+let cpuCards = []
 let currentCard
 
 const getAllCards = () => {
@@ -36,7 +38,15 @@ const startGame = cards => {
 }
 
 const assignCpuCards = cards => {
-    
+    for (let i = 0; i<5; i++ ) {
+        cpuCards.push(cards[Math.floor(Math.random()*cards.length)])
+    }
+    assignCpuCardsToHand(cpuCards)
+}
+const assignCpuCardsToHand = cpuCards => {
+    cpuHand.forEach((position, index) => {
+        position.addEventListener('click', event => handleHandCardClickEvent(event, cpuCards[index]), {once: true})
+    })
 }
 
 const assignUserCards = cards => {
@@ -55,6 +65,7 @@ const addUserCardsToHand = playerCards => {
 
 const handleHandCardClickEvent = (event, card) => {
     event.target.style.backgroundImage = ''
+    event.target.style.backgroundColor = "#f4f4f4"
     addEventListenerToBoard(card)
 }
 
