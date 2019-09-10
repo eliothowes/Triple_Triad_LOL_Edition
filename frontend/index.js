@@ -19,6 +19,7 @@ const playerCard4 = document.querySelector('.player-card#pc-4')
 const playerCard5 = document.querySelector('.player-card#pc-5')
 
 const playerHand = document.querySelectorAll('.player-card')
+const boardPositions = document.querySelectorAll('.game-square')
 
 let playerCards = []
 let currentCard
@@ -36,7 +37,7 @@ const startGame = cards => {
 }
 
 const assignCpuCards = cards => {
-    
+
 }
 
 const assignUserCards = cards => {
@@ -63,20 +64,42 @@ const addEventListenerToBoard = card => {
     gameBoard.addEventListener('click', event => addCardToBoard(event.target, card), {once: true})
 }
 
+let gameBoardData = [
+    ['','',''],
+    ['','',''],
+    ['','','']
+]
+
 const addCardToBoard = (position, card) => {
     
     position.style.backgroundImage = `url(${card.img})`
     position.style.opacity = '.6'
+
+    if (position.id === "top-left") {
+        gameBoardData[0][0] = card 
+    } else if (position.id === "top-center") {
+        gameBoardData[0][1] = card
+    } else if (position.id === "top-right") {
+        gameBoardData[0][2] = card
+    } else if (position.id === "middle-left") {
+        gameBoardData[1][0] = card
+    } else if (position.id === "middle-center") {
+        gameBoardData[1][1] = card
+    } else if (position.id === "middle-right") {
+        gameBoardData[1][2] = card
+    } else if (position.id === "bottom-left") {
+        gameBoardData[2][0] = card
+    } else if (position.id === "bottom-center") {
+        gameBoardData[2][1] = card
+    } else if (position.id === "bottom-right") {
+        gameBoardData[2][2] = card
+    }
 }
 
-const moveCard = () => {
-    debugger
+const findEmptySquare = () => {
+    return [...boardPositions].find(square => {
+        return square.style.backgroundImage === ''
+    })
 }
 
 window.addEventListener('load', getAllCards)
-
-// gameBoard = [
-//     ['','',''],
-//     ['','',''],
-//     ['','','']
-// ]
