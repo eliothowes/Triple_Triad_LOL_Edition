@@ -1,101 +1,77 @@
-/* /////////////////////////////////////////////// */
-/* ///////////////////Game Board///////////////// */
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+/* //////////////////////////////////////////////// */
+/* ////////////////For Smaller Screens///////////// */
+/* //////////////////////////////////////////////// */
 
-    #game-board{
-        display: grid;
-        grid-template-columns: repeat(3, 33%);
-        /* grid-template-rows: repeat(3, 33%); */
-        background-image: url("/images/rift_map.png");
-        background-size: cover;
-        border-right: solid;
-        border-left: solid;
-        border-bottom: solid;
-        border-color: #000000;
-        border-radius: 25px;
-        margin-left: 30%;
-        margin-right: auto;
-        margin-top: 5%;
-        position: fixed;
-        width: 700px;
-        height: 700px;
-    }
+body, html{
+    cursor: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/lol_cursor.png"), pointer;
+}
 
-    .game-square {
-        background-color: rgba(255, 255, 255, 0.8);
-        border: 0.5px solid rgba(0, 0, 0, 0.8);
-        padding: 20px;
-        font-size: 30px;
-        text-align: center;
-    }
-/* /////////////////////////////////////////////// */
-/* /////////////////////////////////////////////// */
+.container {
+    display: grid;
+    grid-template-columns: 0.5fr 8fr 8fr 8fr 8fr 8fr 0.5fr;
+    grid-template-rows: 0.5fr 2fr 2fr 2fr 2fr 0.5fr;
+    width: 100vw;
+    height: 100vh;
+}
 
+.container > div.header {
+    grid-area: 1 / 1 / 2 / 8;
+    text-align: center;
+    background: lightcoral;
+}
 
-/* /////////////////////////////////////////////// */
-/* ///////////////Board Locations///////////////// */
-    #top-left {
-      background-size: cover;
-    }
+.player-cards {
+    display: grid;
+    grid-area: 2 / 1 / 6 / 3;
+    text-align: center;
+    background: cyan;
+}
 
-    #top-center {
-        background-size: cover;
-    }
+.player-card {
+    border: 0.5px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
 
-    #top-right {
-        background-size: cover;
-    }
+.game-board {
+    display: grid;
+    grid-area: 2 / 3 / 6 / 6;
+    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/rift_map.png");
+    background-size: cover;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
 
-    #middle-left {
-        background-size: cover;
-    }
-  
-    #middle-center {
-          background-size: cover;
-    }
-  
-    #middle-right {
-          background-size: cover;
-    }
+div.game-square {
+    border: 0.5px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
 
-    #bottom-left {
-        background-size: cover;
-    }
-  
-    #bottom-center {
-          background-size: cover;
-    }
-  
-    #bottom-right {
-          background-size: cover;
-    }
-/* /////////////////////////////////////////////// */
-/* /////////////////////////////////////////////// */
+.cpu-cards {
+    display: grid;
+    grid-area: 2 / 6 / 6 / 8;
+    text-align: center;
+    background: greenyellow;
+}
 
-    #players-cards {
-        border-right: solid;
-        border-right: solid;
-        border-left: solid;
-        border-bottom: solid;
-        border-color: #000000;
-        border-radius: 25px;
-        margin-top: 5%;
-        margin-left: 5%;
-        width: 350px;
-        height: 700px;
-        position: relative;
-        float: left;
-    }
+.cpu-card {
+    border: 0.5px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
 
-    #cpu-cards {
-        border-right: solid;
-        border-left: solid;
-        border-bottom: solid;
-        border-color: #000000;
-        border-radius: 25px;
-        margin-top: 5%;
-        margin-right: 5%;
-        width: 350px;
-        height: 700px;
-        float: right;
-        position: relative;
-    }
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    text-align: center;
+    background: gold;
+}
