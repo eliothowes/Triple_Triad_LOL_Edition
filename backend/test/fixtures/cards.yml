@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  img: MyString
+  top_value: 1
+  right_value: 1
+  bottom_value: 1
+  left_value: 1
+
+two:
+  name: MyString
+  img: MyString
+  top_value: 1
+  right_value: 1
+  bottom_value: 1
+  left_value: 1
