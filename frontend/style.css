@@ -1,0 +1,101 @@
+/* /////////////////////////////////////////////// */
+/* ///////////////////Game Board///////////////// */
+
+    #game-board{
+        display: grid;
+        grid-template-columns: repeat(3, 33%);
+        /* grid-template-rows: repeat(3, 33%); */
+        background-image: url("/images/rift_map.png");
+        background-size: cover;
+        border-right: solid;
+        border-left: solid;
+        border-bottom: solid;
+        border-color: #000000;
+        border-radius: 25px;
+        margin-left: 30%;
+        margin-right: auto;
+        margin-top: 5%;
+        position: fixed;
+        width: 700px;
+        height: 700px;
+    }
+
+    .game-square {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 0.5px solid rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        font-size: 30px;
+        text-align: center;
+    }
+/* /////////////////////////////////////////////// */
+/* /////////////////////////////////////////////// */
+
+
+/* /////////////////////////////////////////////// */
+/* ///////////////Board Locations///////////////// */
+    #top-left {
+      background-size: cover;
+    }
+
+    #top-center {
+        background-size: cover;
+    }
+
+    #top-right {
+        background-size: cover;
+    }
+
+    #middle-left {
+        background-size: cover;
+    }
+  
+    #middle-center {
+          background-size: cover;
+    }
+  
+    #middle-right {
+          background-size: cover;
+    }
+
+    #bottom-left {
+        background-size: cover;
+    }
+  
+    #bottom-center {
+          background-size: cover;
+    }
+  
+    #bottom-right {
+          background-size: cover;
+    }
+/* /////////////////////////////////////////////// */
+/* /////////////////////////////////////////////// */
+
+    #players-cards {
+        border-right: solid;
+        border-right: solid;
+        border-left: solid;
+        border-bottom: solid;
+        border-color: #000000;
+        border-radius: 25px;
+        margin-top: 5%;
+        margin-left: 5%;
+        width: 350px;
+        height: 700px;
+        position: relative;
+        float: left;
+    }
+
+    #cpu-cards {
+        border-right: solid;
+        border-left: solid;
+        border-bottom: solid;
+        border-color: #000000;
+        border-radius: 25px;
+        margin-top: 5%;
+        margin-right: 5%;
+        width: 350px;
+        height: 700px;
+        float: right;
+        position: relative;
+    }
