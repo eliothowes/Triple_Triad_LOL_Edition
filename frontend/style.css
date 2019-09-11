@@ -82,3 +82,7 @@ div.game-square {
     text-align: center;
     background: gold;
 }
+
+.freeze { 
+    pointer-events: none; 
+}
