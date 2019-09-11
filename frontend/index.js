@@ -32,13 +32,16 @@ let gameBoardData = [
     ['','',''],
     ['','','']
 ]
+let globalPromiseResolve = () => {}
 
 
 const getAllCards = () => {
-    fetch(CARDS_URL)
+    return fetch(CARDS_URL)
     .then(resp => resp.json())
     .then(assignCards)
-    .then(addEventListenersToPlayersHand(playerCards))
+    .then(addUserCardsToHand)
+    // .then(playGame)
+    // .then(addEventListenersToPlayersHand(playerCards))
     .catch(error => alert(error.message))
 }
 
@@ -57,34 +60,47 @@ const assignPlayerCards = cards => {
     for (let i = 0; i<5; i++ ) {
     playerCards.push(cards[Math.floor(Math.random()*cards.length)])
     }
-    addUserCardsToHand(playerCards)    
+    // addUserCardsToHand(playerCards)    
 }
 
-const addUserCardsToHand = playerCards => { 
+const addUserCardsToHand = () => { 
     playerCardEl.forEach((position, index) => {
+        // debugger
         position.style.backgroundImage = `url(${playerCards[index].img})`  
     })
 }
 
-const addEventListenersToPlayersHand = playerCards => {
+const addEventListenersToPlayersHand = () => {
     playerCardEl.forEach((position, index) => {
-        position.addEventListener('click', event => handlePlayerCardClickEvent(event, playerCards[index]), {once: true})
+        position.addEventListener('click', namedEventListener)
     })
+    // playerHand.addEventListener('click', namedEventListener)
+}
+
+const namedEventListener = (event) => {
+    // debugger
+    if (event.target.className === "player-card") {
+        //  => handlePlayerCardClickEvent(event, playerCards[index]), {once: true}
+        handlePlayerCardClickEvent(event, playerCards[event.target.dataset.index])
+        // debugger
+        event.target.removeEventListener('click', namedEventListener)
+    }
 }
 
 const handlePlayerCardClickEvent = (event, card) => {
+    // debugger
     event.target.style.backgroundImage = ''
     event.target.style.backgroundColor = "#f4f4f4"
-    freezePlayerHand()
+    freezePosition(event.target)
     addEventListenerToBoard(card)
 }
 
 const addEventListenerToBoard = card => {
-    gameBoard.addEventListener('click', event => {addCardToBoard(event.target, card)}, {once: true})
+    gameBoard.addEventListener('click', event => {addCardToBoard(event.target, card); globalPromiseResolve()}, {once: true})
 }
 
-const freezePlayerHand = () => {
-    playerCardEl.forEach(position => position.classList.add('freeze'))
+const freezePosition = position => {
+    position.classList.add('freeze')
 }
 
 const unfreezePlayerHand = () => {
@@ -97,7 +113,8 @@ const positionEmpty = position => {
 
 const addCardToBoard = (position, card) => {
     if (positionEmpty(position)) {
-        unfreezePlayerHand()
+        // debugger
+        // unfreezePlayerHand()
         position.style.backgroundImage = `url(${card.img})`
         position.style.opacity = '.6'
 
@@ -121,8 +138,8 @@ const addCardToBoard = (position, card) => {
             gameBoardData[2][2] = card
         }
     } else {
-        freezePlayerHand()
-        addEventListenerToBoard(card)
+        // freezePlayerHand()
+        // addEventListenerToBoard(card)
     }
 }
 
@@ -156,7 +173,10 @@ const cpuTurn = () => {
 }
 
 const playerTurn = () => {
-    console.log('Youve had a turn') 
+    console.log('It is now your turn') 
+    addEventListenersToPlayersHand()
+
+    return new Promise((resolve, reject) => globalPromiseResolve = resolve)
 }
 
 const boardFull = () => {
@@ -167,18 +187,42 @@ const boardFull = () => {
     }
 }
 
-const playGame = () => {
+const filledSquares = () => {
+    let filledSqr = 0
+     filledSqr += gameBoardData[0].reduce((accumulator, currentValue) => accumulator + (currentValue !== '' ? 1 : 0), 0)
+     filledSqr += gameBoardData[1].reduce((accumulator, currentValue) => accumulator + (currentValue !== '' ? 1 : 0), 0)
+     filledSqr += gameBoardData[2].reduce((accumulator, currentValue) => accumulator + (currentValue !== '' ? 1 : 0), 0)
+     return filledSqr
+ }
+
+const playGame = async () => {
+    // getAllCards()
     whoStarts()
     while (boardFull() === false) {
+        let counter = filledSquares()
         if (currentPlayer === 'CPU') {
             // cpuThinkTime()
             cpuTurn()
             currentPlayer = 'Player'
-        } else if (currentPlayer === 'Player')  {
-            playerTurn()
+        // } else if (currentPlayer === 'Player')  {
+        } else {
+            // let firstTime = true
+            // while (counter === filledSquares()) {
+            //     console.log("Filled Squares: ", filledSquares())
+            //     if (firstTime) playerTurn()
+            //     firstTime = false
+            // }
+            // currentPlayer = 'CPU'
+            await playerTurn()
             currentPlayer = 'CPU'
         }
     }
+    setTimeout(() => {alert('GAME FINISHED')}, 1000)
 }
 
-window.addEventListener('load', getAllCards)
+const newGameBtn = document.querySelector('.header button')
+const startGameBtn = document.querySelector('button#start')
+newGameBtn.addEventListener('click', event => getAllCards())
+startGameBtn.addEventListener('click', event => playGame())
+
+
