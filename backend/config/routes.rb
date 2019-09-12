@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :create]
 
   get '/users/:id/results', to: 'users#results'
+  get '/users/:username', to: 'users#show', as: :user
 end

@@ -103,6 +103,53 @@ div.game-square {
     z-index: 1;
 }
 
+
+.new_account_div {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.new_account_form {
+    display: inline-block;
+    position: fixed;
+    margin-top: 2%;
+    margin-left: 4%;
+    z-index: 10;
+    background-color: #f4f4f4;
+}
+
+.create_account_button {
+    display: inline-block;
+    position: fixed;
+    margin-top: 2%;
+    margin-left: 3%;
+    z-index: 10;
+}
+
+.log_in_button {
+    display: inline-block;
+    position: fixed;
+    margin-top: 2%;
+    margin-left: 10%;
+    z-index: 10;
+}
+
+.log_in_div {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.log_in_form {
+    display: inline-block;
+    position: fixed;
+    margin-top: 2%;
+    margin-left: 4%;
+    z-index: 10;
+
 .player-score {
     margin-left: 48%;
 }
@@ -110,4 +157,3 @@ div.game-square {
 .cpu-score {
     margin-left: 3.3%;
     /* margin-top: 3%; */
-}

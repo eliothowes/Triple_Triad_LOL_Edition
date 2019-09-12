@@ -25,11 +25,23 @@ const cpuHand = document.querySelectorAll('.cpu-card')
 const playerHand = document.querySelector('.player-cards')
 const boardPositions = document.querySelectorAll('.game-square')
 
+const createacctBtn = document.querySelector('.create_account_button')
+const newUserForm = document.querySelector('.new_account_div')
+
+const logInBtn = document.querySelector('.log_in_button')
+const logInForm = document.querySelector('.log_in_div ')
+
 let playerCards = []
 let cpuCards = []
+
 let currentCard
+
 let currentPlayer
+
+let currentUser
+
 let currentGame
+
 let playerScore = 0
 let cpuScore = 0
 let gameBoardData = [
@@ -485,6 +497,53 @@ const displayResults = results => {
 
 }
 
+createacctBtn.addEventListener('click', event => {
+    newUserForm.style.display = "block"
+    createacctBtn.style.display = 'none'
+    logInBtn.style.display = 'none'
+})
+
+newUserForm.addEventListener('submit', event => {
+    event.preventDefault()
+    newUserForm.style.display = "none"
+    createUser(event.target)
+})
+
+const createUser = (form) => {
+    currentUser = form.username.value
+        return fetch(USER_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: form.name.value,
+                username: form.username.value,
+                email: form.email.value
+            })
+            })
+            .then(resp => resp.json())
+            .then(logInBtn.style.display = 'none')
+}
+
+logInBtn.addEventListener('click', event => {
+    logInForm.style.display = "block"
+    logInBtn.style.display = 'none'
+    createacctBtn.style.display = 'none'
+})
+
+logInForm.addEventListener('submit', event => {
+    event.preventDefault()
+    logInForm.style.display = "none"
+    logInUser(event.target)
+})
+
+const logInUser = (form) => {
+    return fetch(`${USER_URL}/${form.username.value}`)
+    .then(resp => resp.json())
+    .then(user => currentUser = user.username)
+    .catch(error => alert(error.message))
+}
 
 const newGameBtn = document.querySelector('img#setUp')
 const startGameBtn = document.querySelector('img#start')
