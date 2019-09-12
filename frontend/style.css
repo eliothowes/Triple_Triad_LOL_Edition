@@ -149,11 +149,20 @@ div.game-square {
     margin-top: 2%;
     margin-left: 4%;
     z-index: 10;
+}
 
 .player-score {
-    margin-left: 48%;
+    margin-left: 4%;
+    color: white;
 }
 
 .cpu-score {
     margin-left: 3.3%;
-    /* margin-top: 3%; */
+    color: white;
+}
+
+.player-stats {
+    margin-left: 26%;
+    color: white;
+    font-size: 15px;
+}

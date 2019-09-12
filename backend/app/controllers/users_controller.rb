@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
     def results
-        byebug
         user = User.find_by(params[:id])
 
         render json: {
@@ -27,9 +26,4 @@ class UsersController < ApplicationController
         render json: user
     end
 
-    private 
-
-    def user_params
-        require(params[:user]).permit(:name, :username, :email)
-    end
 end

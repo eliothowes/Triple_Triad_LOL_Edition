@@ -35,11 +35,10 @@ let playerCards = []
 let cpuCards = []
 
 let currentCard
-
 let currentPlayer
 
+let currentUserObj
 let currentUser
-
 let currentGame
 
 let playerScore = 0
@@ -383,7 +382,8 @@ const cpuThinkTime = () => {
 }
 
 const cpuTurn = () => {
-    let square = findEmptySquare()
+    let square = selectRandomFreeSpace()
+    // let square = findEmptySquare()
     addCardToBoard(square, cpuCards[0])
     cpuCards.shift()
 }
@@ -412,7 +412,7 @@ const createNewGame = () => {
     fetch(GAME_URL, {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({user_id: 1})
+    body: JSON.stringify({user_id: currentUserObj.id})
     })
     .then(resp => resp.json())
     .then(obj => {currentGame = obj})
@@ -493,9 +493,10 @@ const getResults = () => {
     .catch(error => alert(error.message))
 }
 
-const displayResults = results => {
-
-}
+// const displayResults = results => {
+//     const stats = document.querySelector('.player-stats')
+//     stats.innerText = `Player: ${currentUser} W: $ D: 0 L: 0`
+// }
 
 createacctBtn.addEventListener('click', event => {
     newUserForm.style.display = "block"
@@ -541,7 +542,10 @@ logInForm.addEventListener('submit', event => {
 const logInUser = (form) => {
     return fetch(`${USER_URL}/${form.username.value}`)
     .then(resp => resp.json())
-    .then(user => currentUser = user.username)
+    .then(user => {
+        currentUserObj = user
+        currentUser = user.name
+    })
     .catch(error => alert(error.message))
 }
 
@@ -558,3 +562,16 @@ startGameBtn.addEventListener('click', event => {
     let buttons = document.querySelectorAll('.buttons')
     buttons.forEach(button => button.style.display = 'none')
 })
+
+const logout = () => {
+    let currentUserObj = null
+    let currentUser = null
+}
+
+// Need to add to cpuTurn function /////////////////
+const selectRandomFreeSpace = () => {
+    const freeSpaces = [...boardPositions].filter(row => {
+        return row.style.backgroundImage === ''})
+    return freeSpaces[Math.floor(Math.random()*freeSpaces.length)]
+}
+
