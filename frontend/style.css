@@ -102,3 +102,10 @@ div.game-square {
     border-radius: 25px;
     z-index: 1;
 }
+
+.new_account_div {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+}

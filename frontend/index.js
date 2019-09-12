@@ -25,6 +25,8 @@ const cpuHand = document.querySelectorAll('.cpu-card')
 const playerHand = document.querySelector('.player-cards')
 const boardPositions = document.querySelectorAll('.game-square')
 
+const newUserForm = document.querySelector('.new_account_div')
+
 let playerCards = []
 let cpuCards = []
 let currentCard
@@ -506,3 +508,6 @@ startGameBtn.addEventListener('click', event => {
     buttons.forEach(button => button.style.display = 'none')
 })
 
+newUserForm.addEventListener('submit', event => {
+    event.preventDefault()
+})
