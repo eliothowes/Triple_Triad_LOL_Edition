@@ -449,6 +449,7 @@ const resetGame = () => {
         ['','','']
     ]
     location.reload()
+    currentGame = null
 }
 
 const updateGame = gameResult => {
@@ -489,7 +490,7 @@ const getResults = () => {
 }
 
 const displayResults = results => {
-    
+
 }
 
 
