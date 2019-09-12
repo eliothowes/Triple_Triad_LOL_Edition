@@ -1,4 +1,4 @@
-
+/* 
 body, html{
     cursor: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/lol_cursor.png"), pointer;
 }
@@ -85,4 +85,120 @@ div.game-square {
 
 .freeze { 
     pointer-events: none; 
+} */
+body, html{
+    cursor: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/lol_cursor.png"), pointer;
+    background-image: url('../images/Board-Template.png');
+    background-size: 100vw 100vh;
+}
+.container {
+    display: grid;
+    grid-template-columns: 0.5fr 8fr 8fr 8fr 8fr 8fr 0.5fr;
+    grid-template-rows: 0.5fr 2fr 2fr 2fr 2fr 0.5fr;
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+}
+div.header {
+    grid-area: 1 / 1 / 2 / 8;
+    text-align: center;
+    display: flex;
+    /* background: lightcoral; */
+    /* opacity: .3; */
+}
+
+div.header h3{
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.player-cards {
+    /* display: grid; */
+    grid-area: 2 / 1 / 6 / 3;
+    text-align: center;
+    /* background: cyan; */
+    /* opacity: .3; */
+}
+
+/* h2 {
+    margin: auto;
+} */
+
+.player-card {
+    border: 0.5px solid rgba(250, 250, 250, 0.8);
+    width: 6vw;
+    height:10vh; 
+    background-size: 8vw 14vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    /* background-size: cover; */
+}
+.game-board {
+    display: grid;
+    grid-area: 2 / 3 / 6 / 6;
+    width: 58.5vw;
+    height: 89vh; 
+    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/rift_map.png");
+    background-size: cover;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+div.game-square {
+    border: 1px solid black;
+    outline-style: none;
+    padding: 20px;
+    /* width: 16.75vw;
+    height: 25vh;  */
+    font-size: 30px;
+    text-align: center;
+    background-size: 20.75vw 31vh;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.cpu-cards {
+    /* display: grid; */
+    grid-area: 2 / 6 / 6 / 8;
+    text-align: center;
+    /* background: greenyellow; */
+    /* opacity: .3; */
+}
+.cpu-card {
+    border: 0.5px solid rgba(250, 250, 250, 0.8);
+    background-color: #000000;
+    width: 6vw;
+    height: 10vh; 
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    z-index: 9999;
+}
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 8;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    text-align: center;
+    /* background: gold; */
+    /* opacity: .3; */
+}
+.freeze { 
+    pointer-events: none; 
+}
+
+.buttons {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 125px;
+    height: 40px;
+    border-radius: 25px;
 }
