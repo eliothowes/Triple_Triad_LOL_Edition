@@ -25,6 +25,7 @@ const cpuHand = document.querySelectorAll('.cpu-card')
 const playerHand = document.querySelector('.player-cards')
 const boardPositions = document.querySelectorAll('.game-square')
 
+const createacctBtn = document.querySelector('.create_account_button')
 const newUserForm = document.querySelector('.new_account_div')
 
 let playerCards = []
@@ -496,18 +497,26 @@ const displayResults = results => {
 }
 
 
-const newGameBtn = document.querySelector('button#setUp')
-const startGameBtn = document.querySelector('button#start')
-newGameBtn.addEventListener('click', event => {
-    getAllCards()
-    newGameBtn.style.zIndex = "0"
-})
-startGameBtn.addEventListener('click', event => {
-    playGame()
-    let buttons = document.querySelectorAll('.buttons')
-    buttons.forEach(button => button.style.display = 'none')
+// const newGameBtn = document.querySelector('button#setUp')
+// const startGameBtn = document.querySelector('button#start')
+// newGameBtn.addEventListener('click', event => {
+//     getAllCards()
+//     newGameBtn.style.zIndex = "0"
+// })
+// startGameBtn.addEventListener('click', event => {
+//     playGame()
+//     let buttons = document.querySelectorAll('.buttons')
+//     buttons.forEach(button => button.style.display = 'none')
+// })
+
+createacctBtn.addEventListener('click', event => {
+    console.log
+    newUserForm.style.display = "block"
+    createacctBtn.style.display = 'none'
 })
 
 newUserForm.addEventListener('submit', event => {
     event.preventDefault()
+    newUserForm.style.display = "none"
+    debugger
 })

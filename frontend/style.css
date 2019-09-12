@@ -109,3 +109,12 @@ div.game-square {
     top: 0;
     left: 0;
 }
+
+.new_account_form {
+    display: inline-block;
+    position: fixed;
+    margin-top: 25%;
+    margin-left: 30%;
+    z-index: 10;
+    background-color: #f4f4f4;
+}
