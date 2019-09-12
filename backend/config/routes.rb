@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :cards, only: [:index]
   resources :games, only: [:create, :update]
   resources :users, only: [:index, :create]
+
+  get '/users/:id/results', to: 'users#results'
 end
