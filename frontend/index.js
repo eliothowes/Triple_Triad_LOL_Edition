@@ -122,7 +122,7 @@ const addCardToBoard = (position, card) => {
         // debugger
         // unfreezePlayerHand()
         position.style.backgroundImage = `url(${card.img})`
-        position.style.opacity = '.6'
+        position.style.opacity = '.75'
 
         /////////////TOP LEFT ///////////
         /////////////////////////////////
