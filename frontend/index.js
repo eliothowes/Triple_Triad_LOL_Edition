@@ -30,9 +30,15 @@ const newUserForm = document.querySelector('.new_account_div')
 
 let playerCards = []
 let cpuCards = []
+
 let currentCard
+
 let currentPlayer
+
+let currentUser
+
 let currentGame
+
 let playerScore = 0
 let cpuScore = 0
 let gameBoardData = [
@@ -518,5 +524,21 @@ createacctBtn.addEventListener('click', event => {
 newUserForm.addEventListener('submit', event => {
     event.preventDefault()
     newUserForm.style.display = "none"
-    debugger
+    createUser(event.target)
 })
+
+const createUser = (form) => {
+    currentUser = form.username.value
+        return fetch(USER_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: form.name.value,
+                username: form.username.value,
+                email: form.email.value
+            })
+            })
+            .then(resp => resp.json())
+}
