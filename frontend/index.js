@@ -494,9 +494,15 @@ const displayResults = results => {
 }
 
 
-const newGameBtn = document.querySelector('.header button')
+const newGameBtn = document.querySelector('button#setUp')
 const startGameBtn = document.querySelector('button#start')
-newGameBtn.addEventListener('click', event => getAllCards())
-startGameBtn.addEventListener('click', event => playGame())
-
+newGameBtn.addEventListener('click', event => {
+    getAllCards()
+    newGameBtn.style.zIndex = "0"
+})
+startGameBtn.addEventListener('click', event => {
+    playGame()
+    let buttons = document.querySelectorAll('.buttons')
+    buttons.forEach(button => button.style.display = 'none')
+})
 
