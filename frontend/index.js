@@ -52,14 +52,14 @@ let gameBoardData = [
 let result
 let globalPromiseResolve = () => {}
 
+const sleep = ms =>
+	new Promise(resolve => setTimeout(resolve, ms))
 
 const getAllCards = () => {
     return fetch(CARDS_URL)
     .then(resp => resp.json())
     .then(assignCards)
     .then(addUserCardsToHand)
-    // .then(playGame)
-    // .then(addEventListenersToPlayersHand(playerCards))
     .catch(error => alert(error.message))
 }
 
@@ -78,12 +78,10 @@ const assignPlayerCards = cards => {
     for (let i = 0; i<5; i++ ) {
     playerCards.push(cards[Math.floor(Math.random()*cards.length)])
     }
-    // addUserCardsToHand(playerCards)    
 }
 
 const addUserCardsToHand = () => { 
     playerCardEl.forEach((position, index) => {
-        // debugger
         position.style.backgroundImage = `url(${playerCards[index].img})`  
     })
 }
@@ -92,21 +90,16 @@ const addEventListenersToPlayersHand = () => {
     playerCardEl.forEach((position, index) => {
         position.addEventListener('click', namedEventListener)
     })
-    // playerHand.addEventListener('click', namedEventListener)
 }
 
 const namedEventListener = (event) => {
-    // debugger
     if (event.target.className === "player-card") {
-        //  => handlePlayerCardClickEvent(event, playerCards[index]), {once: true}
         handlePlayerCardClickEvent(event, playerCards[event.target.dataset.index])
-        // debugger
         event.target.removeEventListener('click', namedEventListener)
     }
 }
 
 const handlePlayerCardClickEvent = (event, card) => {
-    // debugger
     event.target.style.backgroundImage = ''
     event.target.style.backgroundColor = "#f4f4f4"
     freezePosition(event.target)
@@ -131,17 +124,15 @@ const positionEmpty = position => {
 
 const addCardToBoard = (position, card) => {
     if (positionEmpty(position)) {
-        // debugger
-        // unfreezePlayerHand()
         position.style.backgroundImage = `url(${card.img})`
-        position.style.opacity = '.6'
+        position.style.opacity = '.75'
 
         /////////////TOP LEFT ///////////
         /////////////////////////////////
         if (position.id === "top-left") {
             gameBoardData[0][0] = card 
                 if (gameBoardData[0][0].right_value > gameBoardData[0][1].left_value) {
-                    debugger
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -149,6 +140,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[0][0].bottom_value > gameBoardData[1][0].top_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -160,6 +152,7 @@ const addCardToBoard = (position, card) => {
         } else if (position.id === "top-center") {
             gameBoardData[0][1] = card
                 if (gameBoardData[0][1].left_value > gameBoardData[0][0].right_value){
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -167,6 +160,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[0][1].right_value > gameBoardData[0][2].left_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -174,6 +168,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[0][1].bottom_value > gameBoardData[1][1].top_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -185,6 +180,7 @@ const addCardToBoard = (position, card) => {
         } else if (position.id === "top-right") {
             gameBoardData[0][2] = card
                 if (gameBoardData[0][2].left_value > gameBoardData[0][1].right_value){
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -192,6 +188,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[0][2].bottom_value > gameBoardData[1][2].top_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -203,6 +200,7 @@ const addCardToBoard = (position, card) => {
         } else if (position.id === "middle-left") {
             gameBoardData[1][0] = card
                 if (gameBoardData[1][0].top_value > gameBoardData[0][0].bottom_value){
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -210,6 +208,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[1][0].right_value > gameBoardData[1][1].left_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -217,6 +216,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[1][0].bottom_value > gameBoardData[2][0].top_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -228,6 +228,7 @@ const addCardToBoard = (position, card) => {
         } else if (position.id === "middle-center") {
             gameBoardData[1][1] = card
                 if (gameBoardData[1][1].top_value > gameBoardData[0][1].bottom_value){
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -235,6 +236,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[1][1].right_value > gameBoardData[1][2].left_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -242,6 +244,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[1][1].bottom_value > gameBoardData[2][1].top_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -249,6 +252,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[1][1].left_value > gameBoardData[1][0].right_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -260,6 +264,7 @@ const addCardToBoard = (position, card) => {
         } else if (position.id === "middle-right") {
             gameBoardData[1][2] = card
                 if (gameBoardData[1][2].top_value > gameBoardData[0][2].bottom_value){
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -267,6 +272,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[1][2].left_value > gameBoardData[1][1].right_value){
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -274,6 +280,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[1][2].bottom_value > gameBoardData[2][2].top_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -285,6 +292,7 @@ const addCardToBoard = (position, card) => {
         } else if (position.id === "bottom-left") {
             gameBoardData[2][0] = card
                 if (gameBoardData[2][0].right_value > gameBoardData[2][1].left_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -292,6 +300,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[2][0].top_value > gameBoardData[1][0].bottom_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -303,6 +312,7 @@ const addCardToBoard = (position, card) => {
         } else if (position.id === "bottom-center") {
             gameBoardData[2][1] = card
                 if (gameBoardData[2][1].left_value > gameBoardData[2][0].right_value){
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -310,6 +320,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[2][1].right_value > gameBoardData[2][2].left_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -317,6 +328,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[2][1].top_value > gameBoardData[1][1].bottom_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -328,6 +340,7 @@ const addCardToBoard = (position, card) => {
         } else if (position.id === "bottom-right") {
             gameBoardData[2][2] = card
                 if (gameBoardData[2][2].top_value > gameBoardData[1][2].bottom_value){
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -335,6 +348,7 @@ const addCardToBoard = (position, card) => {
                     }
                 }
                 if (gameBoardData[2][2].left_value > gameBoardData[2][1].right_value) {
+                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -344,10 +358,6 @@ const addCardToBoard = (position, card) => {
         }
     } else {
         /////////// Something has to happen here if player tries to play on already taken square! ///////////////
-
-
-        // freezePlayerHand()
-        // addEventListenerToBoard(card)
     }
     updateScoreBoard()
 }
@@ -373,17 +383,14 @@ const cpuThinkTime = () => {
 }
 
 const cpuTurn = () => {
-    console.log('CPU taking a turn')
     let square = findEmptySquare()
     addCardToBoard(square, cpuCards[0])
     cpuCards.shift()
 }
 
 const playerTurn = () => {
-    console.log('It is now your turn') 
     addEventListenersToPlayersHand()
-
-    return new Promise((resolve, reject) => globalPromiseResolve = resolve)
+    return new Promise(resolve => globalPromiseResolve = resolve)
 }
 
 const boardFull = () => {
@@ -394,19 +401,11 @@ const boardFull = () => {
     }
 }
 
-const filledSquares = () => {
-    let filledSqr = 0
-     filledSqr += gameBoardData[0].reduce((accumulator, currentValue) => accumulator + (currentValue !== '' ? 1 : 0), 0)
-     filledSqr += gameBoardData[1].reduce((accumulator, currentValue) => accumulator + (currentValue !== '' ? 1 : 0), 0)
-     filledSqr += gameBoardData[2].reduce((accumulator, currentValue) => accumulator + (currentValue !== '' ? 1 : 0), 0)
-     return filledSqr
- }
-
  const updateScoreBoard = () => {
-    const pScoreH2 = document.querySelector('div.player-cards h2')
-    pScoreH2.innerText = `PLAYER: ${playerScore}`
-    const cScoreH2 = document.querySelector('div.cpu-cards h2')
-    cScoreH2.innerText = `CPU: ${cpuScore}`
+    const pScoreH3 = document.querySelector('.player-score')
+    pScoreH3.innerText = `${playerScore}`
+    const cScoreH3 = document.querySelector('.cpu-score')
+    cScoreH3.innerText = `${cpuScore}`
 }
 
 const createNewGame = () => {
@@ -416,10 +415,7 @@ const createNewGame = () => {
     body: JSON.stringify({user_id: 1})
     })
     .then(resp => resp.json())
-    .then(obj => {
-        // debugger
-        currentGame = obj
-    })
+    .then(obj => {currentGame = obj})
     .catch(error => alert(error.message))
 }
 
@@ -428,16 +424,12 @@ const playGame = async () => {
     updateScoreBoard()
     whoStarts()
     while (boardFull() === false) {
-        let counter = filledSquares()
         if (currentPlayer === 'CPU') {
-
-            // cpuThinkTime()
+            await sleep(2500)
             cpuTurn()
-            // debugger
             currentPlayer = 'Player'
         } else {
             await playerTurn()
-            // debugger
             currentPlayer = 'CPU'
         }
     }
@@ -505,19 +497,6 @@ const displayResults = results => {
 
 }
 
-
-// const newGameBtn = document.querySelector('button#setUp')
-// const startGameBtn = document.querySelector('button#start')
-// newGameBtn.addEventListener('click', event => {
-//     getAllCards()
-//     newGameBtn.style.zIndex = "0"
-// })
-// startGameBtn.addEventListener('click', event => {
-//     playGame()
-//     let buttons = document.querySelectorAll('.buttons')
-//     buttons.forEach(button => button.style.display = 'none')
-// })
-
 createacctBtn.addEventListener('click', event => {
     newUserForm.style.display = "block"
     createacctBtn.style.display = 'none'
@@ -565,3 +544,17 @@ const logInUser = (form) => {
     .then(user => currentUser = user.username)
     .catch(error => alert(error.message))
 }
+
+const newGameBtn = document.querySelector('img#setUp')
+const startGameBtn = document.querySelector('img#start')
+
+newGameBtn.addEventListener('click', event => {
+    getAllCards()
+    newGameBtn.style.zIndex = "0"
+})
+
+startGameBtn.addEventListener('click', event => {
+    playGame()
+    let buttons = document.querySelectorAll('.buttons')
+    buttons.forEach(button => button.style.display = 'none')
+})
