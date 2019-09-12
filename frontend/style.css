@@ -118,3 +118,11 @@ div.game-square {
     z-index: 10;
     background-color: #f4f4f4;
 }
+
+.create_account_button {
+    display: inline-block;
+    position: fixed;
+    margin-top: 2%;
+    margin-left: 2%;
+    z-index: 10;
+}
