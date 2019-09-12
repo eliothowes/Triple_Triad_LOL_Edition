@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
     def results
+        byebug
         user = User.find_by(params[:id])
 
         render json: {
