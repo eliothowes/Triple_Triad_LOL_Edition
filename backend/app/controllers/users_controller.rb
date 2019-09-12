@@ -10,4 +10,19 @@ class UsersController < ApplicationController
         }
     end
 
+    def create
+        user = User.new()
+        user.name = params[:user][:name]
+        user.username = params[:user][:username]
+        user.email = params[:user][:email]
+        user.save
+
+        render json: user
+    end
+
+    private 
+
+    def user_params
+        require(params[:user]).permit(:name, :username, :email)
+    end
 end

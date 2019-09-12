@@ -19,5 +19,4 @@ class User < ApplicationRecord
         self.results.count{|result| result == 'LOSS'}
     end
 
-
 end
