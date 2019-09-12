@@ -28,6 +28,9 @@ const boardPositions = document.querySelectorAll('.game-square')
 const createacctBtn = document.querySelector('.create_account_button')
 const newUserForm = document.querySelector('.new_account_div')
 
+const logInBtn = document.querySelector('.log_in_button')
+const logInForm = document.querySelector('.log_in_div ')
+
 let playerCards = []
 let cpuCards = []
 
@@ -516,9 +519,9 @@ const displayResults = results => {
 // })
 
 createacctBtn.addEventListener('click', event => {
-    console.log
     newUserForm.style.display = "block"
     createacctBtn.style.display = 'none'
+    logInBtn.style.display = 'none'
 })
 
 newUserForm.addEventListener('submit', event => {
@@ -541,4 +544,24 @@ const createUser = (form) => {
             })
             })
             .then(resp => resp.json())
+            .then(logInBtn.style.display = 'none')
+}
+
+logInBtn.addEventListener('click', event => {
+    logInForm.style.display = "block"
+    logInBtn.style.display = 'none'
+    createacctBtn.style.display = 'none'
+})
+
+logInForm.addEventListener('submit', event => {
+    event.preventDefault()
+    logInForm.style.display = "none"
+    logInUser(event.target)
+})
+
+const logInUser = (form) => {
+    return fetch(`${USER_URL}/${form.username.value}`)
+    .then(resp => resp.json())
+    .then(user => currentUser = user.username)
+    .catch(error => alert(error.message))
 }
