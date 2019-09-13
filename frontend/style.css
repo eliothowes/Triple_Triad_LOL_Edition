@@ -68,7 +68,9 @@ div.game-square {
 }
 .cpu-card {
     border: 0.5px solid rgba(250, 250, 250, 0.8);
-    background-color: #000000;
+    /* background-color: #000000; */
+    background-image: url("something here");
+    background-size: cover;
     width: 6vw;
     height: 10vh; 
     padding: 20px;
@@ -179,7 +181,7 @@ div.game-square {
     }
 
     .buttons {
-        display: inline-block;
+        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -231,7 +233,7 @@ div.game-square {
     }
 
     .buttons {
-        display: inline-block;
+        display: none;
         position: fixed;
         top: 0;
         left: 0;

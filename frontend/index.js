@@ -508,6 +508,8 @@ newUserForm.addEventListener('submit', event => {
     event.preventDefault()
     newUserForm.style.display = "none"
     createUser(event.target)
+    newGameBtn.style.display = "inline-block"
+    startGameBtn.style.display = "inline-block"
 })
 
 const createUser = (form) => {
@@ -537,6 +539,8 @@ logInForm.addEventListener('submit', event => {
     event.preventDefault()
     logInForm.style.display = "none"
     logInUser(event.target)
+    newGameBtn.style.display = "inline-block"
+    startGameBtn.style.display = "inline-block"
 })
 
 const logInUser = (form) => {
