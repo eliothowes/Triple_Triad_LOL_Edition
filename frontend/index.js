@@ -129,10 +129,11 @@ const positionEmpty = position => {
 
 const addCardToBoard = (position, card) => {
     if (positionEmpty(position)) {
-        if (card.owner === 'Player') {
+        if (currentPlayer === 'Player') {
         position.style.backgroundImage = `url("https://mod-3-project.s3.eu-west-2.amazonaws.com/player_border.png"), url(${card.img})`
         position.style.opacity = '.75'
-        } else {
+        } 
+        if (currentPlayer === 'CPU') {
             position.style.backgroundImage = `url("https://mod-3-project.s3.eu-west-2.amazonaws.com/cpu_border.png"), url(${card.img})`
             position.style.opacity = '.75'
         }
