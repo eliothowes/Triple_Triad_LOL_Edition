@@ -568,7 +568,6 @@ const logout = () => {
     let currentUser = null
 }
 
-// Need to add to cpuTurn function /////////////////
 const selectRandomFreeSpace = () => {
     const freeSpaces = [...boardPositions].filter(row => {
         return row.style.backgroundImage === ''})
