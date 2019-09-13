@@ -71,12 +71,14 @@ const assignCpuCards = cards => {
     for (let i = 0; i<5; i++ ) {
         cpuCards.push(cards[Math.floor(Math.random()*cards.length)])
     }
+    cpuCards.forEach(card => card.owner = 'CPU')
 }
 
 const assignPlayerCards = cards => {
     for (let i = 0; i<5; i++ ) {
     playerCards.push(cards[Math.floor(Math.random()*cards.length)])
     }
+    playerCards.forEach(card => card.owner = 'Player')
 }
 
 const addUserCardsToHand = () => { 
@@ -129,7 +131,8 @@ const addCardToBoard = (position, card) => {
         /////////////TOP LEFT ///////////
         /////////////////////////////////
         if (position.id === "top-left") {
-            gameBoardData[0][0] = card 
+            gameBoardData[0][0] = card
+            if (gameBoardData[0][0].owner != gameBoardData[0][1].owner) {
                 if (gameBoardData[0][0].right_value > gameBoardData[0][1].left_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -138,6 +141,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[0][0].owner != gameBoardData[1][0].owner) {
                 if (gameBoardData[0][0].bottom_value > gameBoardData[1][0].top_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -146,10 +151,12 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
         //////////////////////////////////////////
         ////////TOP CENTER////////////////////////
         } else if (position.id === "top-center") {
             gameBoardData[0][1] = card
+            if (gameBoardData[0][1].owner != gameBoardData[0][0].owner) {
                 if (gameBoardData[0][1].left_value > gameBoardData[0][0].right_value){
                      
                     if (currentPlayer === 'Player'){
@@ -158,6 +165,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[0][1].owner != gameBoardData[0][2].owner) {
                 if (gameBoardData[0][1].right_value > gameBoardData[0][2].left_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -166,6 +175,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[0][1].owner != gameBoardData[1][1].owner) {
                 if (gameBoardData[0][1].bottom_value > gameBoardData[1][1].top_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -174,10 +185,12 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
         /////////////////////////////////////////
         /////////TOP RIGHT///////////////////////
         } else if (position.id === "top-right") {
             gameBoardData[0][2] = card
+            if (gameBoardData[0][2].owner != gameBoardData[0][1].owner) {
                 if (gameBoardData[0][2].left_value > gameBoardData[0][1].right_value){
                      
                     if (currentPlayer === 'Player'){
@@ -186,6 +199,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[0][2].owner != gameBoardData[1][2].owner) {
                 if (gameBoardData[0][2].bottom_value > gameBoardData[1][2].top_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -194,10 +209,12 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
         ///////////////////////////////////////////
         /////////MIDDLE LEFT///////////////////////
         } else if (position.id === "middle-left") {
             gameBoardData[1][0] = card
+            if (gameBoardData[1][0].owner != gameBoardData[0][0].owner) {
                 if (gameBoardData[1][0].top_value > gameBoardData[0][0].bottom_value){
                      
                     if (currentPlayer === 'Player'){
@@ -206,6 +223,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[1][0].owner != gameBoardData[1][1].owner) {
                 if (gameBoardData[1][0].right_value > gameBoardData[1][1].left_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -214,6 +233,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[1][0].owner != gameBoardData[2][0].owner) {
                 if (gameBoardData[1][0].bottom_value > gameBoardData[2][0].top_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -222,10 +243,12 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
         /////////////////////////////////////////////
         /////////MIDDLE CENTER///////////////////////
         } else if (position.id === "middle-center") {
             gameBoardData[1][1] = card
+            if (gameBoardData[1][1].owner != gameBoardData[0][1].owner) {
                 if (gameBoardData[1][1].top_value > gameBoardData[0][1].bottom_value){
                      
                     if (currentPlayer === 'Player'){
@@ -234,6 +257,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[1][1].owner != gameBoardData[1][2].owner) {
                 if (gameBoardData[1][1].right_value > gameBoardData[1][2].left_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -242,6 +267,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[1][1].owner != gameBoardData[2][1].owner) {
                 if (gameBoardData[1][1].bottom_value > gameBoardData[2][1].top_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -250,6 +277,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[1][1].owner != gameBoardData[1][0].owner) {
                 if (gameBoardData[1][1].left_value > gameBoardData[1][0].right_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -258,10 +287,12 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
         ////////////////////////////////////////////
         ////////MIDDLE RIGHT////////////////////////
         } else if (position.id === "middle-right") {
             gameBoardData[1][2] = card
+            if (gameBoardData[1][2].owner != gameBoardData[0][2].owner) {
                 if (gameBoardData[1][2].top_value > gameBoardData[0][2].bottom_value){
                      
                     if (currentPlayer === 'Player'){
@@ -270,6 +301,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[1][2].owner != gameBoardData[1][1].owner) {
                 if (gameBoardData[1][2].left_value > gameBoardData[1][1].right_value){
                      
                     if (currentPlayer === 'Player'){
@@ -278,6 +311,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[1][2].owner != gameBoardData[2][2].owner) {
                 if (gameBoardData[1][2].bottom_value > gameBoardData[2][2].top_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -286,10 +321,12 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
         ///////////////////////////////////////////
         ///////BOTTOM LEFT///////////////////////// 
         } else if (position.id === "bottom-left") {
             gameBoardData[2][0] = card
+            if (gameBoardData[2][0].owner != gameBoardData[2][1].owner) {
                 if (gameBoardData[2][0].right_value > gameBoardData[2][1].left_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -298,6 +335,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[2][0].owner != gameBoardData[1][0].owner) {
                 if (gameBoardData[2][0].top_value > gameBoardData[1][0].bottom_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -306,10 +345,12 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
         /////////////////////////////////////////////
         ////////BOTTOM CENTER////////////////////////
         } else if (position.id === "bottom-center") {
             gameBoardData[2][1] = card
+            if (gameBoardData[2][1].owner != gameBoardData[2][0].owner) {
                 if (gameBoardData[2][1].left_value > gameBoardData[2][0].right_value){
                      
                     if (currentPlayer === 'Player'){
@@ -318,6 +359,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[2][1].owner != gameBoardData[2][2].owner) {
                 if (gameBoardData[2][1].right_value > gameBoardData[2][2].left_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -326,6 +369,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[2][1].owner != gameBoardData[1][1].owner) {
                 if (gameBoardData[2][1].top_value > gameBoardData[1][1].bottom_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -334,10 +379,12 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
         ////////////////////////////////////////////
         ///////BOTTOM RIGHT/////////////////////////
         } else if (position.id === "bottom-right") {
             gameBoardData[2][2] = card
+            if (gameBoardData[2][2].owner != gameBoardData[1][2].owner) {
                 if (gameBoardData[2][2].top_value > gameBoardData[1][2].bottom_value){
                      
                     if (currentPlayer === 'Player'){
@@ -346,6 +393,8 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
+            if (gameBoardData[2][2].owner != gameBoardData[2][1].owner) {
                 if (gameBoardData[2][2].left_value > gameBoardData[2][1].right_value) {
                      
                     if (currentPlayer === 'Player'){
@@ -354,6 +403,7 @@ const addCardToBoard = (position, card) => {
                         ++cpuScore
                     }
                 }
+            }
         }
     } else {
         /////////// Something has to happen here if player tries to play on already taken square! ///////////////
@@ -486,17 +536,18 @@ const declareWinner = () => {
     }
 }
 
+const displayResults = results => {
+    debugger
+    const stats = document.querySelector('.player-stats')
+    stats.innerText = `${currentUser  } W: ${results['wins']  } D: ${results['draws']  } L: ${results['losses']  }`
+}
+
 const getResults = () => {
-    fetch(USER_URL + `/${currentUser.id}/results`)
+    fetch(USER_URL + `/${currentUserObj.id}/results`)
     .then(resp => resp.json())
     .then(displayResults)
     .catch(error => alert(error.message))
 }
-
-// const displayResults = results => {
-//     const stats = document.querySelector('.player-stats')
-//     stats.innerText = `Player: ${currentUser} W: $ D: 0 L: 0`
-// }
 
 createacctBtn.addEventListener('click', event => {
     newUserForm.style.display = "block"
@@ -549,6 +600,7 @@ const logInUser = (form) => {
     .then(user => {
         currentUserObj = user
         currentUser = user.name
+        getResults()
     })
     .catch(error => alert(error.message))
 }
