@@ -60,7 +60,7 @@ div.game-square {
     padding: 20px;
     font-size: 30px;
     text-align: center;
-    background-size: 20.75vw 31vh;
+    background-size: 19.30vw 29.5vh;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -170,7 +170,7 @@ div.game-square {
     .cpu-score {
         margin-left: 52%;
         margin-top: 1%;
-        color: rgb(155, 42, 61)
+        color: rgb(155, 42, 61);
         position: fixed;
     }
 
