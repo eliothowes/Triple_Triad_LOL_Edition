@@ -4,6 +4,10 @@ const USER_URL = 'http://localhost:3000/users'
 
 const gameBoard = document.querySelector('.game-board')
 
+const victory = document.querySelector('.victory')
+const loss = document.querySelector('.loss')
+const draw = document.querySelector('.draw')
+
 const topLeft = document.getElementById('top-left')
 const topCenter = document.getElementById('top-center')
 const topRight = document.getElementById('top-right')
@@ -436,7 +440,7 @@ const playGame = async () => {
     gameResult()
     setTimeout(declareWinner, 1000)
     updateGame(result)
-    setTimeout(resetGame, 2000)
+    // setTimeout(resetGame, 2000)
 }
 
 const resetGame = () => {
@@ -474,15 +478,22 @@ const gameResult = () => {
     } else {
         result = "LOSS"
     }
+    setTimeout(resetGame, 5000)
 }
 
 const declareWinner = () => {
     if (playerScore > cpuScore) {
-        alert(`Player Wins`)
+        victory.style.display = 'inline-block'
+        // alert(`Player Wins`)
+        victory.addEventListener('click', event => {victory.style.display = "none"})
     } else if (playerScore === cpuScore) {
-        alert(`It's a Draw`)
+        draw.style.display = 'inline-block'
+        // alert(`It's a Draw`)
+        draw.addEventListener('click', event => {draw.style.display = "none"})
     } else {
-        alert(`CPU Wins`)
+        loss.style.display = 'inline-block'
+        // alert(`CPU Wins`)
+        loss.addEventListener('click', event => {loss.style.display = "none"})
     }
 }
 

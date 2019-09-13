@@ -248,3 +248,32 @@ div.game-square {
 }
 /* ////////////////////////////////// */
 /* ////////////////////////////////// */
+.victory {
+    display: none;
+    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/victory.png");
+    position: fixed;
+    margin-top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+}
+
+.draw {
+    display: none;
+    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/victory.png");
+    position: fixed;
+    margin-top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+}
+
+.loss {
+    display: none;
+    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/victory.png");
+    position: fixed;
+    margin-top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+}
