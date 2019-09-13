@@ -88,7 +88,7 @@ div.game-square {
 .freeze { 
     pointer-events: none; 
 }
-
+/* 
 .buttons {
     display: inline-block;
     position: fixed;
@@ -101,7 +101,7 @@ div.game-square {
     height: 40px;
     border-radius: 25px;
     z-index: 1;
-}
+} */
 
 
 .new_account_div {
@@ -124,7 +124,7 @@ div.game-square {
     display: inline-block;
     position: fixed;
     margin-top: 2%;
-    margin-left: 3%;
+    margin-left: 1%;
     z-index: 10;
 }
 
@@ -132,7 +132,7 @@ div.game-square {
     display: inline-block;
     position: fixed;
     margin-top: 2%;
-    margin-left: 10%;
+    margin-left: 10.5%;
     z-index: 10;
 }
 
@@ -155,6 +155,97 @@ div.game-square {
     margin-left: 4%;
     color: white;
 }
+/* ////////Smaller Screens////////// */
+@media only screen and (max-width: 1500px) {
+    .player-score {
+        margin-left: 47%;
+        margin-top: 1%;
+        color: white;
+        position: fixed;
+    }
+
+    .cpu-score {
+        margin-left: 52%;
+        margin-top: 1%;
+        color: white;
+        position: fixed;
+    }
+
+    .player-stats {
+        margin-left: 32%;
+        margin-top: 1%;
+        color: white;
+        font-size: 1em;
+    }
+
+    .buttons {
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-top: 26.5%;
+        margin-left: 45%;
+        padding: 10px;
+        width: 125px;
+        height: 40px;
+        border-radius: 25px;
+        z-index: 1;
+    }
+}
+/* ////////////////////////////////// */
+/* ///////////Larger Screen///////////// */
+@media only screen and (min-width: 1500px) {
+    .player-score {
+        margin-left: 47%;
+        margin-top: 0.85%;
+        color: white;
+        position: fixed;
+        font-size: 1.5em;
+    }
+
+    .cpu-score {
+        margin-left: 52%;
+        margin-top: 0.85%;
+        color: white;
+        position: fixed;
+        font-size: 1.5em;
+    }
+
+    .player-stats {
+        margin-left: 33%;
+        margin-top: 1%;
+        color: white;
+        font-size: 1.17em;
+    }
+
+    .player-cards {
+        grid-area: 2 / 1 / 6 / 3;
+        margin-top: 10%;
+        text-align: center;
+    }
+
+    .cpu-cards {
+        grid-area: 2 / 6 / 6 / 8;
+        margin-top: 10%;
+        text-align: center;
+    }
+
+    .buttons {
+        display: inline-block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin-top: 24.5%;
+        margin-left: 46.5%;
+        padding: 10px;
+        width: 125px;
+        height: 40px;
+        border-radius: 25px;
+        z-index: 1;
+    }
+}
+/* ////////////////////////////////// */
+/* ////////////////////////////////// */
 
 .cpu-score {
     margin-left: 3.3%;
