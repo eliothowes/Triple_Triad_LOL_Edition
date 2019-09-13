@@ -88,7 +88,7 @@ div.game-square {
 .freeze { 
     pointer-events: none; 
 }
-
+/* 
 .buttons {
     display: inline-block;
     position: fixed;
@@ -101,7 +101,7 @@ div.game-square {
     height: 40px;
     border-radius: 25px;
     z-index: 1;
-}
+} */
 
 
 .new_account_div {
@@ -124,7 +124,7 @@ div.game-square {
     display: inline-block;
     position: fixed;
     margin-top: 2%;
-    margin-left: 3%;
+    margin-left: 1%;
     z-index: 10;
 }
 
@@ -132,7 +132,7 @@ div.game-square {
     display: inline-block;
     position: fixed;
     margin-top: 2%;
-    margin-left: 10%;
+    margin-left: 10.5%;
     z-index: 10;
 }
 
