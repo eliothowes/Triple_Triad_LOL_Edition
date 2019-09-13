@@ -150,6 +150,11 @@ div.game-square {
     margin-left: 4%;
     z-index: 10;
 }
+
+.player-score {
+    margin-left: 4%;
+    color: white;
+}
 /* ////////Smaller Screens////////// */
 @media only screen and (max-width: 1500px) {
     .player-score {
@@ -241,3 +246,14 @@ div.game-square {
 }
 /* ////////////////////////////////// */
 /* ////////////////////////////////// */
+
+.cpu-score {
+    margin-left: 3.3%;
+    color: white;
+}
+
+.player-stats {
+    margin-left: 26%;
+    color: white;
+    font-size: 15px;
+}
