@@ -246,14 +246,3 @@ div.game-square {
 }
 /* ////////////////////////////////// */
 /* ////////////////////////////////// */
-
-.cpu-score {
-    margin-left: 3.3%;
-    color: white;
-}
-
-.player-stats {
-    margin-left: 26%;
-    color: white;
-    font-size: 15px;
-}
