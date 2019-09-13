@@ -144,6 +144,7 @@ const addCardToBoard = (position, card) => {
                 if (gameBoardData[0][0].right_value > gameBoardData[0][1].left_value) {
                      
                     if (currentPlayer === 'Player'){
+                        // gameBoardData[0][1].owner = 'Player'
                         ++playerScore
                     } else {
                         ++cpuScore
@@ -394,7 +395,6 @@ const addCardToBoard = (position, card) => {
             gameBoardData[2][2] = card
             if (gameBoardData[2][2].owner != gameBoardData[1][2].owner) {
                 if (gameBoardData[2][2].top_value > gameBoardData[1][2].bottom_value){
-                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -404,7 +404,6 @@ const addCardToBoard = (position, card) => {
             }
             if (gameBoardData[2][2].owner != gameBoardData[2][1].owner) {
                 if (gameBoardData[2][2].left_value > gameBoardData[2][1].right_value) {
-                     
                     if (currentPlayer === 'Player'){
                         ++playerScore
                     } else {
@@ -552,7 +551,6 @@ const declareWinner = () => {
 }
 
 const displayResults = results => {
-    debugger
     const stats = document.querySelector('.player-stats')
     stats.innerText = `${currentUser  } W: ${results['wins']  } D: ${results['draws']  } L: ${results['losses']  }`
 }

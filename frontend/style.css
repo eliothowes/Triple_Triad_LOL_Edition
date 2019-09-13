@@ -278,3 +278,7 @@ div.game-square {
     height: 100vh;
     z-index: 9999;
 }
+
+element {
+    background-color: none;
+}
