@@ -162,21 +162,21 @@ div.game-square {
     .player-score {
         margin-left: 47%;
         margin-top: 1%;
-        color: white;
+        color: lightblue;
         position: fixed;
     }
 
     .cpu-score {
         margin-left: 52%;
         margin-top: 1%;
-        color: white;
+        color: lightcoral;
         position: fixed;
     }
 
     .player-stats {
         margin-left: 32%;
         margin-top: 1%;
-        color: white;
+        color: lightblue;
         font-size: 1em;
     }
 
@@ -200,7 +200,7 @@ div.game-square {
     .player-score {
         margin-left: 47%;
         margin-top: 0.85%;
-        color: white;
+        color: lightblue;
         position: fixed;
         font-size: 1.5em;
     }
@@ -208,7 +208,7 @@ div.game-square {
     .cpu-score {
         margin-left: 52%;
         margin-top: 0.85%;
-        color: white;
+        color: lightcoral;
         position: fixed;
         font-size: 1.5em;
     }
@@ -216,7 +216,7 @@ div.game-square {
     .player-stats {
         margin-left: 33%;
         margin-top: 1%;
-        color: white;
+        color: lightblue;
         font-size: 1.17em;
     }
 
