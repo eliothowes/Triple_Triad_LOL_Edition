@@ -71,7 +71,7 @@ div.game-square {
 .cpu-card {
     border: 0.5px solid rgb(155, 42, 61);
     background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/back_of_cpu_card.png");
-    background-size: cover;
+    background-size: 100% 100%;
     width: 6vw;
     height: 10vh; 
     padding: 20px;
@@ -252,6 +252,7 @@ div.game-square {
 .victory {
     display: none;
     background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/victory_2.png");
+    background-size: 100% 100%;
     position: fixed;
     margin-top: 0;
     width: 100vw;
@@ -262,6 +263,7 @@ div.game-square {
 .draw {
     display: none;
     background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/draw.png");
+    background-size: 100% 100%;
     position: fixed;
     margin-top: 0;
     width: 100vw;
@@ -272,6 +274,7 @@ div.game-square {
 .loss {
     display: none;
     background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/defeat.png");
+    background-size: 100% 100%;
     position: fixed;
     margin-top: 0;
     width: 100vw;
