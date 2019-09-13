@@ -1,6 +1,6 @@
 body, html{
     cursor: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/lol_cursor.png"), pointer;
-    background-image: url('https://mod-3-project.s3.eu-west-2.amazonaws.com/background_01.png');
+    background-image: url('https://mod-3-project.s3.eu-west-2.amazonaws.com/background_03.png');
     background-size: 100vw 100vh;
     margin: 0;
 }
@@ -28,7 +28,8 @@ div.header h3{
 }
 
 .player-card {
-    border: 0.5px solid rgba(250, 250, 250, 0.8);
+    border: 0.5px solid rgb(0, 75, 139);
+    /* border: 0.5px solid rgba(250, 250, 250, 0.8); */
     width: 6vw;
     height:10vh; 
     background-size: 8vw 14vh;
@@ -42,6 +43,7 @@ div.header h3{
     position: relative;
 }
 .game-board {
+    border: solid rgb(141, 126, 39);
     display: grid;
     grid-area: 2 / 3 / 6 / 6;
     width: 58.5vw;
@@ -67,9 +69,8 @@ div.game-square {
     text-align: center;
 }
 .cpu-card {
-    border: 0.5px solid rgba(250, 250, 250, 0.8);
-    /* background-color: #000000; */
-    background-image: url("something here");
+    border: 0.5px solid rgb(155, 42, 61);
+    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/back_of_cpu_card.png");
     background-size: cover;
     width: 6vw;
     height: 10vh; 
@@ -162,21 +163,21 @@ div.game-square {
     .player-score {
         margin-left: 47%;
         margin-top: 1%;
-        color: lightblue;
+        color: rgb(0, 75, 139);
         position: fixed;
     }
 
     .cpu-score {
         margin-left: 52%;
         margin-top: 1%;
-        color: lightcoral;
+        color: rgb(155, 42, 61)
         position: fixed;
     }
 
     .player-stats {
         margin-left: 32%;
         margin-top: 1%;
-        color: lightblue;
+        color: rgb(0, 75, 139);
         font-size: 1em;
     }
 
@@ -200,7 +201,7 @@ div.game-square {
     .player-score {
         margin-left: 47%;
         margin-top: 0.85%;
-        color: lightblue;
+        color: rgb(0, 75, 139);
         position: fixed;
         font-size: 1.5em;
     }
@@ -208,7 +209,7 @@ div.game-square {
     .cpu-score {
         margin-left: 52%;
         margin-top: 0.85%;
-        color: lightcoral;
+        color: rgb(155, 42, 61);
         position: fixed;
         font-size: 1.5em;
     }
@@ -216,7 +217,7 @@ div.game-square {
     .player-stats {
         margin-left: 33%;
         margin-top: 1%;
-        color: lightblue;
+        color: rgb(0, 75, 139);
         font-size: 1.17em;
     }
 
@@ -250,7 +251,7 @@ div.game-square {
 /* ////////////////////////////////// */
 .victory {
     display: none;
-    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/victory.png");
+    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/victory_2.png");
     position: fixed;
     margin-top: 0;
     width: 100vw;
@@ -260,7 +261,7 @@ div.game-square {
 
 .draw {
     display: none;
-    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/victory.png");
+    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/draw.png");
     position: fixed;
     margin-top: 0;
     width: 100vw;
@@ -270,7 +271,7 @@ div.game-square {
 
 .loss {
     display: none;
-    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/victory.png");
+    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/defeat.png");
     position: fixed;
     margin-top: 0;
     width: 100vw;
