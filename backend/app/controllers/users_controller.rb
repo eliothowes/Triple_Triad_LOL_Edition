@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def results
-        user = User.find_by(params[:id])
+        user = User.find_by(id: params[:id])
 
         render json: {
             wins: user.wins,
