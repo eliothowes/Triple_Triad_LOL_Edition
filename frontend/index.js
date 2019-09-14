@@ -105,6 +105,7 @@ const namedEventListener = (event) => {
 }
 
 const handlePlayerCardClickEvent = (event, card) => {
+    playSound(cardPlace)
     event.target.style.backgroundImage = ''
     event.target.style.backgroundColor = "#f4f4f4"
     freezePosition(event.target)
@@ -133,8 +134,10 @@ const topLeftCheck = (boardsquare, card) => {
         if (card.right_value > gameBoardData[0][1].left_value) {
             if (currentPlayer != gameBoardData[0][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -142,8 +145,10 @@ const topLeftCheck = (boardsquare, card) => {
         if (card.bottom_value > gameBoardData[1][0].top_value) {
             if (currentPlayer != gameBoardData[1][0].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -157,8 +162,10 @@ const topCenterCheck = (boardsquare, card) => {
         if (card.left_value > gameBoardData[0][0].right_value){
             if (currentPlayer != gameBoardData[0][0].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -166,8 +173,10 @@ const topCenterCheck = (boardsquare, card) => {
         if (card.right_value > gameBoardData[0][2].left_value) {
             if (currentPlayer != gameBoardData[0][2].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -175,8 +184,10 @@ const topCenterCheck = (boardsquare, card) => {
         if (card.bottom_value > gameBoardData[1][1].top_value) {
             if (currentPlayer != gameBoardData[1][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -190,8 +201,10 @@ const topRightCheck = (boardsquare, card) => {
         if (card.left_value > gameBoardData[0][1].right_value){
             if (currentPlayer != gameBoardData[0][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -200,8 +213,10 @@ const topRightCheck = (boardsquare, card) => {
             if (currentPlayer != gameBoardData[1][2].owner) {
                  
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -215,8 +230,10 @@ const middleLeftCheck = (boardsquare, card) => {
         if (card.top_value > gameBoardData[0][0].bottom_value){
             if (currentPlayer != gameBoardData[0][0].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -224,8 +241,10 @@ const middleLeftCheck = (boardsquare, card) => {
         if (card.right_value > gameBoardData[1][1].left_value) {
             if (currentPlayer != gameBoardData[1][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -233,8 +252,10 @@ const middleLeftCheck = (boardsquare, card) => {
         if (card.bottom_value > gameBoardData[2][0].top_value) {
             if (currentPlayer != gameBoardData[2][0].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -248,8 +269,10 @@ const middleCenterCheck = (boardsquare, card) => {
         if (card.top_value > gameBoardData[0][1].bottom_value){
             if (currentPlayer != gameBoardData[0][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -257,8 +280,10 @@ const middleCenterCheck = (boardsquare, card) => {
         if (card.right_value > gameBoardData[1][2].left_value) {
             if (currentPlayer != gameBoardData[1][2].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -266,8 +291,10 @@ const middleCenterCheck = (boardsquare, card) => {
         if (card.bottom_value > gameBoardData[2][1].top_value) {
             if (currentPlayer != gameBoardData[2][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -275,8 +302,10 @@ const middleCenterCheck = (boardsquare, card) => {
         if (card.left_value > gameBoardData[1][0].right_value) {
             if (currentPlayer != gameBoardData[1][0].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -290,8 +319,10 @@ const middleRightCheck = (boardsquare, card) => {
         if (card.top_value > gameBoardData[0][2].bottom_value){
             if (currentPlayer != gameBoardData[0][2].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -299,8 +330,10 @@ const middleRightCheck = (boardsquare, card) => {
         if (card.left_value > gameBoardData[1][1].right_value){
             if (currentPlayer != gameBoardData[1][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -308,8 +341,10 @@ const middleRightCheck = (boardsquare, card) => {
         if (card.bottom_value > gameBoardData[2][2].top_value) {
             if (currentPlayer != gameBoardData[2][2].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -323,8 +358,10 @@ const bottomLeftCheck = (boardsquare, card) => {
         if (card.right_value > gameBoardData[2][1].left_value) {
             if (currentPlayer != gameBoardData[2][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -332,8 +369,10 @@ const bottomLeftCheck = (boardsquare, card) => {
         if (card.top_value > gameBoardData[1][0].bottom_value) {
             if (currentPlayer != gameBoardData[1][0].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -347,8 +386,10 @@ const bottomCenterCheck = (boardsquare, card) => {
         if (card.left_value > gameBoardData[2][0].right_value){
             if (currentPlayer != gameBoardData[2][0].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -356,8 +397,10 @@ const bottomCenterCheck = (boardsquare, card) => {
         if (card.right_value > gameBoardData[2][2].left_value) {
             if (currentPlayer != gameBoardData[2][2].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -365,8 +408,10 @@ const bottomCenterCheck = (boardsquare, card) => {
         if (card.top_value > gameBoardData[1][1].bottom_value) {
             if (currentPlayer != gameBoardData[1][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -380,8 +425,10 @@ const bottomRightCheck = (boardsquare, card) => {
         if (card.top_value > gameBoardData[1][2].bottom_value){
             if (currentPlayer != gameBoardData[1][2].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -389,8 +436,10 @@ const bottomRightCheck = (boardsquare, card) => {
         if (card.left_value > gameBoardData[2][1].right_value) {
             if (currentPlayer != gameBoardData[2][1].owner) {
                 if (currentPlayer === 'Player'){
+                    playSound(beatCard)
                     ++playerScore
                 } else {
+                    playSound(beatCard)
                     ++cpuScore
                 }
             }
@@ -467,6 +516,7 @@ const cpuThinkTime = () => {
 const cpuTurn = () => {
     let square = selectRandomFreeSpace()
     // let square = findEmptySquare()
+    playSound(cardPlace)
     addCardToBoard(square, cpuCards[0])
     cpuCards.shift()
 }
@@ -563,6 +613,7 @@ const gameResult = () => {
 const declareWinner = () => {
     if (playerScore > cpuScore) {
         victory.style.display = 'inline-block'
+        playSound(victoryChant)
         // alert(`Player Wins`)
         victory.addEventListener('click', event => {victory.style.display = "none"})
     } else if (playerScore === cpuScore) {
@@ -571,6 +622,7 @@ const declareWinner = () => {
         draw.addEventListener('click', event => {draw.style.display = "none"})
     } else {
         loss.style.display = 'inline-block'
+        playSound(defeatChant)
         // alert(`CPU Wins`)
         loss.addEventListener('click', event => {loss.style.display = "none"})
     }
@@ -659,6 +711,7 @@ newGameBtn.addEventListener('click', event => {
 
 startGameBtn.addEventListener('click', event => {
     playGame()
+    playSound(music)
     let buttons = document.querySelectorAll('.buttons')
     buttons.forEach(button => button.style.display = 'none')
 })
@@ -674,3 +727,12 @@ const selectRandomFreeSpace = () => {
     return freeSpaces[Math.floor(Math.random()*freeSpaces.length)]
 }
 
+let music = document.querySelector('#main-song')
+let cardPlace = document.querySelector('#place-card')
+let beatCard = document.querySelector('#beat-card')
+let victoryChant = document.querySelector('#victory')
+let defeatChant = document.querySelector('#defeat')
+
+const playSound = (music) => {
+    music.play()
+}
