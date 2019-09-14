@@ -516,7 +516,6 @@ const cpuThinkTime = () => {
 const cpuTurn = () => {
     let square = selectRandomFreeSpace()
     // let square = findEmptySquare()
-    playSound(cardPlace)
     addCardToBoard(square, cpuCards[0])
     cpuCards.shift()
 }
@@ -559,6 +558,8 @@ const playGame = async () => {
     while (boardFull() === false) {
         if (currentPlayer === 'CPU') {
             await sleep(2500)
+            playSound(cardPlace)
+            await sleep(500)
             cpuTurn()
             currentPlayer = 'Player'
         } else {
