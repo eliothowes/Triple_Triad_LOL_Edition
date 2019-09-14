@@ -4,6 +4,11 @@ body, html{
     background-size: 100vw 100vh;
     margin: 0;
 }
+
+button {
+    cursor: url("../backend/app/assets/images/lol_cursor.png"), pointer;
+}
+
 .container {
     display: grid;
     grid-template-columns: 0.5fr 8fr 8fr 8fr 8fr 8fr 0.5fr;
