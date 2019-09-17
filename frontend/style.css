@@ -1,9 +1,14 @@
 body, html{
-    cursor: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/lol_cursor.png"), pointer;
-    background-image: url('https://mod-3-project.s3.eu-west-2.amazonaws.com/background_03.png');
+    cursor: url("../backend/app/assets/images/lol_cursor.png"), pointer;
+    background-image: url('../backend/app/assets/images/background_03.png');
     background-size: 100vw 100vh;
     margin: 0;
 }
+
+button {
+    cursor: url("../backend/app/assets/images/lol_cursor.png"), pointer;
+}
+
 .container {
     display: grid;
     grid-template-columns: 0.5fr 8fr 8fr 8fr 8fr 8fr 0.5fr;
@@ -48,7 +53,7 @@ div.header h3{
     grid-area: 2 / 3 / 6 / 6;
     width: 58.5vw;
     height: 89vh; 
-    background-image: url("https://mod-3-project.s3.eu-west-2.amazonaws.com/rift_map.png");
+    background-image: url("../backend/app/assets/images/rift_map.png");
     background-size: cover;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;

@@ -1,5 +1,10 @@
 # mod_3_project
 
+All game concepts are based on work by Square Enix, and music is
+property of Squre Enix.
+
+Characters and graphics are based on work from Riot Games and are property of Riot Games.
+
 Based on the Final Fantasy VIII card game Triple Triad.
 Built with Ruby on Rails Backend
 Single Page Frontend Using Vanilla JS
