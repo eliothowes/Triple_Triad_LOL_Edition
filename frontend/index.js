@@ -2,6 +2,10 @@ const CARDS_URL = 'http://localhost:3000/cards'
 const GAME_URL = 'http://localhost:3000/games'
 const USER_URL = 'http://localhost:3000/users'
 
+// const CARDS_URL = 'http://10.218.1.145:3000/cards'
+// const GAME_URL = 'http://10.218.1.145:3000/games'
+// const USER_URL = 'http://10.218.1.145:3000/users'
+
 const gameBoard = document.querySelector('.game-board')
 
 const victory = document.querySelector('.victory')
@@ -116,12 +120,13 @@ const addEventListenerToBoard = card => {
     gameBoard.addEventListener('click', event => {addCardToBoard(event.target, card); globalPromiseResolve()}, {once: true})
 }
 
-const freezePosition = position => {
-    position.classList.add('freeze')
+const freezePosition = playedCard => {
+    playedCard.classList.add('freeze')
+    playerHand.classList.add('freeze')
 }
 
 const unfreezePlayerHand = () => {
-    playerCardEl.forEach(position => position.classList.remove('freeze'))
+    playerHand.classList.remove('freeze')
 }
 
 const positionEmpty = position => {
@@ -144,6 +149,7 @@ const topLeftCheck = (boardsquare, card) => {
         } 
         if (card.bottom_value > gameBoardData[1][0].top_value) {
             if (currentPlayer != gameBoardData[1][0].owner) {
+                gameBoardData[1][0].style.transform = "rotateY(180deg) scale(1.05)"
                 if (currentPlayer === 'Player'){
                     playSound(beatCard)
                     ++playerScore
@@ -448,6 +454,7 @@ const bottomRightCheck = (boardsquare, card) => {
 }
 
 const addCardToBoard = (boardsquare, card) => {
+    debugger
     if (positionEmpty(boardsquare)) {
         if (currentPlayer === 'Player') {
         card.owner = currentPlayer
@@ -557,13 +564,14 @@ const playGame = async () => {
     whoStarts()
     while (boardFull() === false) {
         if (currentPlayer === 'CPU') {
-            await sleep(2500)
+            await sleep(2000)
             playSound(cardPlace)
-            await sleep(500)
+            await sleep(250)
             cpuTurn()
             currentPlayer = 'Player'
         } else {
             await playerTurn()
+            unfreezePlayerHand()
             currentPlayer = 'CPU'
         }
     }
