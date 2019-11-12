@@ -40,7 +40,7 @@ $ npm install
 $ open index.html
 ```
 
-Once the app is running you can create and account and start playing
+Once the app is running you can create an account and start playing
 
 ## Credits
 Built with @RoderickCardenas
