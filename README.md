@@ -1,23 +1,17 @@
 # Triple Triad League of Legends Edition
+Based on the Final Fantasy VIII in game card game Triple Triad.
 
-Based on the Final Fantasy VIII card game Triple Triad.
-
-All game concepts are based on work by Square Enix, and music is the property of Square Enix.
-
-Characters and graphics are based on work from Riot Games and are the property of Riot Games.
+Each player has a hand of five cards and takes turns placing them on a 3x3 grid. Cards have a number on each of their sides from 0-9. To beat your opponent, place a card so that your cards value is higher than your opponents cards value on the sides that touch one another. When a card is beated it is flipped and belongs to the player that beat the card. At the end of the game the player with the highest score wins
 
 ## Motivation
-Roderick Cardenas (contributor) and myself both loved playing the in game card game that was Triple Triad in the amazing Final Fantasy VIII.
+Roderick Cardenas (@RoderickCardenas contributor) and myself both loved playing the in game card game that was Triple Triad in the amazing Final Fantasy VIII
 
-To explore what it was like to build a game and to further our knowlegde and skills of JavaScript we decided to relive our childhood and create our own version styled and themed using Rod's love of League of Legends.
+To explore what it was like to build a game and to further our knowlegde and skills in JavaScript we decided to relive our childhood and create our own version styled and themed using Rod's love of League of Legends
 
- 
 ## Screenshots
-Include logo/demo screenshot etc.
+Coming Soon...
 
 ## Tech/framework used
-Ex. -
-
 <b>Built with</b>
 - Ruby on Rails Backend
 - Vanilla Javascript Frontend (single page application)
@@ -46,5 +40,10 @@ $ npm install
 $ open index.html
 ```
 
+Once the app is running you can create and account and start playing
+
 ## Credits
-Give proper credits. This could be a link to any repo which inspired you to build this project, any blogposts or links to people who contrbuted in this project. 
+Built with @RoderickCardenas
+
+All game concepts are based on work by Square Enix, and music is the property of Square Enix
+Characters and graphics are based on work from Riot Games and are the property of Riot Games
