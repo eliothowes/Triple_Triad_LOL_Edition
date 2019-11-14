@@ -14,7 +14,7 @@ Coming Soon...
 ## Tech/framework used
 <b>Built with</b>
 - Ruby on Rails Backend
-- Vanilla Javascript Frontend (single page application)
+- Vanilla JavaScript Frontend (single page application)
 
 ## Installation
 From your command line:
