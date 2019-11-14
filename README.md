@@ -18,25 +18,27 @@ Coming Soon...
 
 ## Installation
 From your command line:
-
+### Clone this repository
 ```bash
-# Clone this repository
 $ git clone https://github.com/eliothowes1090/triple_triad_league_of_legends_edition.git
+```
 
-## Backend Setup
-# Go into the repository
+### Backend Setup
+```bash
 $ cd backend
 $ bundle install
 $ rails db:create db:migrate db:seed
 $ rails s
+```
 
-## Frontend Setup
-# Go into the repository
+### Frontend Setup
+```bash
 $ cd frontend
-# Install dependencies
 $ npm install
+```
 
-# Run the app
+### Run the app
+```bash
 $ open index.html
 ```
 
