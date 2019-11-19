@@ -10,7 +10,7 @@ To explore what it was like to build a game and to further our knowlegde and ski
 
 ## Screenshots and Demo
 ### Screenshots
-![Screenshots of Triple Triage League of Legends Edition](https://gifyu.com/image/vIgk)
+![Screenshots of Triple Triage League of Legends Edition](https://s5.gifyu.com/images/TT-LOL-Screenshots.gif)
 
 ### Demo
 <a href="https://youtu.be/Y3xr911AkLQ" target="_blank">Click to Watch Demo</a>
