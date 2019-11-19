@@ -1,5 +1,5 @@
 # Triple Triad League of Legends Edition
-Based on the Final Fantasy VIII in game card game Triple Triad.
+A card game based on the Final Fantasy VIII in game card game Triple Triad.
 
 Each player has a hand of five cards and takes turns placing them on a 3x3 grid. Cards have a number on each of their sides from 0-9 or 'A' which is 10. To beat your opponent, place a card so that your cards value is higher than your opponents cards value on the sides that touch one another. When a card is beaten it is flipped and belongs to the player that beat the card. At the end of the game the player with the highest score wins
 
