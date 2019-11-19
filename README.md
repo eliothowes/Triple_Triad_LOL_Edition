@@ -47,4 +47,4 @@ Once the app is running you can create an account and start playing
 ## Credits
 Project created and built with [@RoderickCardenas ](https://github.com/roderickcardenas)
 
-All game concepts are based on work by Square Enix.Music is the property of Square Enix. Characters and graphics are based on work from Riot Games and are the property of Riot Games
+All game concepts are based on work by Square Enix. Music is the property of Square Enix. Characters and graphics are based on work from Riot Games and are the property of Riot Games
