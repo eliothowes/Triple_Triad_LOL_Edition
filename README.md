@@ -8,8 +8,12 @@ Each player has a hand of five cards and takes turns placing them on a 3x3 grid.
 
 To explore what it was like to build a game and to further our knowlegde and skills in JavaScript we decided to relive our childhood and create our own version styled and themed using Rod's love of League of Legends
 
-## Screenshots
-Coming Soon...
+## Screenshots and Demo
+### Screenshots
+![Screenshots of Triple Triage League of Legends Edition](https://gifyu.com/image/vIgk)
+
+### Demo
+<a href="https://youtu.be/Y3xr911AkLQ" target="_blank">Click to Watch Demo</a>
 
 ## Tech/framework used
 <b>Built with</b>
