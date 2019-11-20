@@ -6,7 +6,7 @@ Each player has a hand of five cards and takes turns placing them on a 3x3 grid.
 ## Motivation
 [@RoderickCardenas ](https://github.com/roderickcardenas) (contributor) and myself both loved playing the in game card game that was Triple Triad in the amazing Final Fantasy VIII
 
-To explore what it was like to build a game and to further our knowlegde and skills in JavaScript we decided to relive our childhood and create our own version styled and themed using Rod's love of League of Legends
+To explore what it was like to build a game and to further our knowledge and skills in JavaScript we decided to relive our childhood and create our own version styled and themed using Rod's love of League of Legends
 
 ## Screenshots and Demo
 ### Screenshots
